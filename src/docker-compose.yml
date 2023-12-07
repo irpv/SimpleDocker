@@ -1,0 +1,10 @@
+services:
+  server:
+    build: ./
+
+  proxy:
+    image: nginx:latest
+    ports:
+      - 80:8080
+    volumes:
+      - ./nginx_compose.conf:/etc/nginx/nginx.conf
